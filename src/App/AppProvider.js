@@ -11,14 +11,15 @@ export class AppProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 'dashboard',
+      page: 'settings',
       favorites: ['BTC', 'ETH', 'XMR', 'DOGE'],
       ...this.saveSettings(),
       setPage: this.setPage,
       addCoin: this.addCoin,
       removeCoin: this.removeCoin,
       isInFavorites: this.isInfavorites,
-      confirmFavorites: this.confirmFavorites
+      confirmFavorites: this.confirmFavorites,
+      setFilteredCoins: this.setFilteredCoins
     }
   }
 
@@ -69,6 +70,8 @@ export class AppProvider extends React.Component {
   }
 
   setPage = page => this.setState({page})
+
+  setFilteredCoins = (filteredCoins) => this.setState({filteredCoins})
 
   render() {
     return (
