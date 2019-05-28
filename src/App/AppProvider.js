@@ -19,6 +19,7 @@ export class AppProvider extends React.Component {
       removeCoin: this.removeCoin,
       isInFavorites: this.isInfavorites,
       confirmFavorites: this.confirmFavorites,
+      setCurrentFavorite: this.setCurrentFavorite,
       setFilteredCoins: this.setFilteredCoins
     }
   }
@@ -68,15 +69,28 @@ export class AppProvider extends React.Component {
   }
 
   confirmFavorites = () => {
+    let currentFavorite = this.state.favorites[0];
     this.setState({
       firstVisit: false,
-      page: 'dashboard'
+      page: 'dashboard',
+      currentFavorite,
     }, () => {
       this.fetchPrices();
     });
     localStorage.setItem('xChange', JSON.stringify({
-      favorites: this.state.favorites
+      favorites: this.state.favorites,
+      currentFavorite
     }));
+  }
+
+  setCurrentFavorite = sym => {
+    this.setState({
+      currentFavorite: sym
+    });
+    localStorage.setItem('xChange', JSON.stringify({
+      ...JSON.parse(localStorage.getItem('xChange')),
+      currentFavorite: sym
+    }))
   }
 
   saveSettings() {
@@ -87,8 +101,8 @@ export class AppProvider extends React.Component {
         firstVisit: true
       }
     } 
-      let {favorites} = xChangeData;
-      return {favorites}
+      let {favorites, currentFavorite} = xChangeData;
+      return {favorites, currentFavorite};
   }
 
   setPage = page => this.setState({page})
