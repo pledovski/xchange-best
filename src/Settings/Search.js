@@ -23,8 +23,8 @@ const handleFilter = _.debounce((inputValue, coinList, setFilteredCoins) => {
   let coinSymbols = Object.keys(coinList);
   // Get all the coin names and map symbol to name
   let coinNames = coinSymbols.map(sym => coinList[sym].coinName)
-  let allStringToSearch = coinSymbols.concat(coinNames);
-  let fuzzyResults = fuzzy.filter(inputValue, allStringToSearch, {});
+  let allStringsToSearch = coinSymbols.concat(coinNames);
+  let fuzzyResults = fuzzy.filter(inputValue, allStringsToSearch, {});
   console.log(fuzzyResults);
 
 }, 500 )
