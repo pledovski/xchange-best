@@ -22,15 +22,26 @@ const handleFilter = _.debounce((inputValue, coinList, setFilteredCoins) => {
   // Get all the coin symbols
   let coinSymbols = Object.keys(coinList);
   // Get all the coin names and map symbol to name
-  let coinNames = coinSymbols.map(sym => coinList[sym].coinName)
+  let coinNames = coinSymbols.map(sym => coinList[sym].CoinName)
   let allStringsToSearch = coinSymbols.concat(coinNames);
-  let fuzzyResults = fuzzy.filter(inputValue, allStringsToSearch, {});
-  console.log(fuzzyResults);
+  // console.log(allStringsToSearch)
+  let fuzzyResults = fuzzy
+    .filter(inputValue, allStringsToSearch, {})
+    .map(result => result.string);
 
-}, 500 )
+    let filteredCoins = _.pickBy(coinList, (result, symKey) => {
+      let coinName = result.CoinName;
+      return (_.includes(fuzzyResults, symKey) || _.includes(fuzzyResults, coinName))
+    });
+    
+    setFilteredCoins(filteredCoins);
+}, 500)
 
 function filterCoins(e, setFilteredCoins, coinList) {
   let inputValue = e.target.value;
+  if(!inputValue) {
+    setFilteredCoins(null);
+  }
   handleFilter(inputValue, coinList, setFilteredCoins);
 }
 
