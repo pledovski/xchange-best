@@ -2,7 +2,7 @@
   "name": "xchange-best",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pledovski.github.io/xchange",
+  "homepage": "https://pledovski.github.io/xchange-best",
   "dependencies": {
     "cryptocompare": "^1.0.0",
     "fuzzy": "^0.1.3",
