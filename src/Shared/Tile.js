@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import {subtleBoxShadow, purpleBackgroundColor, greenBoxShadow, redBoxShadow} from './Styles';
+import {subtleBoxShadow, purpleBackgroundColor, greenBoxShadow, redBoxShadow, darkTileBackground} from './Styles';
 
 export const Tile = styled.div`\
-  ${subtleBoxShadow}
-  ${purpleBackgroundColor}
+  // ${subtleBoxShadow}
+  ${darkTileBackground}
   padding: 10px;
 `
 

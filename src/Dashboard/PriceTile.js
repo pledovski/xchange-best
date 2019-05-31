@@ -20,7 +20,7 @@ const TickerPrice = styled.div`
 const ChangePct = styled.div`
   color: green;
   ${props => props.red && css `
-    color: red;
+    color: #D0021B;
   `}
 `
 

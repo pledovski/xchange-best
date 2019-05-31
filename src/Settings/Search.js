@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
-import {purpleBackgroundColor, fontSize2} from '../Shared/Styles';
+import {purpleBackgroundColor, darkTileBackground, fontSize2, color5} from '../Shared/Styles';
 import {AppContext} from '../App/AppProvider';
 import _ from 'lodash';
 import fuzzy from 'fuzzy';
 
 const SearchGrid = styled.div`
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 200px 1fr;
 `
 const SearchInput = styled.input`
-  ${purpleBackgroundColor}
+  ${darkTileBackground}
   ${fontSize2}
   border: 1px solid;
   height: 25px;
   place-self: center left;
-  color: #15cda8;
+  color: ${color5};
 `
 
 const handleFilter = _.debounce((inputValue, coinList, setFilteredCoins) => {

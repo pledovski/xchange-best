@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, {css} from 'styled-components';
+import {color5} from '../Shared/Styles';
 import {AppContext} from './AppProvider';
 
 const Logo = styled.div`
@@ -16,8 +17,8 @@ const Bar = styled.div`
 const ControlButtonElem = styled.div`
   cursor: pointer;
   ${props => props.active && css`
-    color: #9764c7;
-    border-bottom: #9764c7 1px solid;
+    color: ${color5};
+    border-bottom: ${color5} 1px solid;
   `}
   ${props => props.hidden && css`
     display:none
