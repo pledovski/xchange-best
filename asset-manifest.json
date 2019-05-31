@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/xchange-best/static/css/main.a36ac380.chunk.css",
+    "main.js": "/xchange-best/static/js/main.8c11a32a.chunk.js",
+    "main.js.map": "/xchange-best/static/js/main.8c11a32a.chunk.js.map",
+    "runtime~main.js": "/xchange-best/static/js/runtime~main.f7c6de7d.js",
+    "runtime~main.js.map": "/xchange-best/static/js/runtime~main.f7c6de7d.js.map",
+    "static/js/2.341f234a.chunk.js": "/xchange-best/static/js/2.341f234a.chunk.js",
+    "static/js/2.341f234a.chunk.js.map": "/xchange-best/static/js/2.341f234a.chunk.js.map",
+    "index.html": "/xchange-best/index.html",
+    "precache-manifest.9b488ea66d68e95b6347ea3950537b78.js": "/xchange-best/precache-manifest.9b488ea66d68e95b6347ea3950537b78.js",
+    "service-worker.js": "/xchange-best/service-worker.js",
+    "static/css/main.a36ac380.chunk.css.map": "/xchange-best/static/css/main.a36ac380.chunk.css.map"
+  }
+}
